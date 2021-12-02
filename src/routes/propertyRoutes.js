@@ -18,7 +18,6 @@ router.get('/properties', (req, res) => {
 
 
 router.put('/properties/:id', async (req, res) => {
-    console.log('here')
     try {
         const property = await Property.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true })
         if (!property) {
